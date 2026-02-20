@@ -1,5 +1,6 @@
 import 'package:bloc_practice/equatable/example_1.dart';
 import 'package:bloc_practice/ui/counter.dart';
+import 'package:bloc_practice/ui/switch_example/switch_example_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark,
             primaryColor: const Color(0xFF2F80ED),
           ),
-          home: Example1()
+          home: SwitchExampleScreen()
 
       ),
     );
