@@ -1,5 +1,15 @@
-abstract class CounterEvent {}
+import 'package:equatable/equatable.dart';
 
-class IncrementEvent extends CounterEvent{}
+abstract class CounterEvent extends Equatable{}
 
-class DecrementEvent extends CounterEvent{}
+class IncrementEvent extends CounterEvent{
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+}
+
+class DecrementEvent extends CounterEvent{
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+}
