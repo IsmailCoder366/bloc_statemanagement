@@ -4,7 +4,7 @@ import 'package:bloc_practice/ui/switch_example/switch_example_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'bloc/counter_bloc.dart';
+import 'bloc/counter_bloc/counter_bloc.dart';
 
 
 void main() {
