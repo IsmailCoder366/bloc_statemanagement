@@ -1,7 +1,6 @@
 import 'package:bloc_practice/bloc/switch_bloc/switch_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../bloc/switch_bloc/switch_bloc.dart';
 import '../../bloc/switch_bloc/switch_state.dart';
 
@@ -24,24 +23,32 @@ class SwitchExampleScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Notification'),
-                BlocBuilder<SwitchBloc, SwitchState>(builder: (context, state){
+                BlocBuilder<SwitchBloc, SwitchState>(builder: (context, state) {
                   print('build');
-                  return Switch(value: state.isSwitch, onChanged: (newValue){
-                  context.read<SwitchBloc>().add(EnabledOrDisabledNotifications());
+                  return Switch(value: state.isSwitch, onChanged: (newValue) {
+                    context.read<SwitchBloc>().add(
+                        EnabledOrDisabledNotifications());
                   });
                 })
               ],
             ),
             SizedBox(height: 30),
-            Container(
-              height: 200,
-              color: Colors.red.withOpacity(0.2),
+            BlocBuilder<SwitchBloc, SwitchState>(
+              builder: (context, state) {
+                return Container(
+                  height: 200,
+                  color: Colors.red.withOpacity(state.slider),
+                );
+              },
             ),
             SizedBox(height: 30),
-            Slider(
-              value: 0.4,
-              onChanged: (value){},
-            )
+            BlocBuilder<SwitchBloc, SwitchState>(builder: (context, state) {
+              return Slider(
+                  value: state.slider, onChanged: (value) {
+
+              }
+              );
+            })
           ],
         ),
       ),

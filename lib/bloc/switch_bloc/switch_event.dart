@@ -5,3 +5,4 @@ abstract class SwitchEvent {
 }
 
 class EnabledOrDisabledNotifications extends SwitchEvent{}
+
